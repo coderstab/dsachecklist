@@ -1,0 +1,27 @@
+function generateFibonacciNumbers(N) {
+    if (N <= 0) {
+        return []; // Return an empty array for invalid input
+    }
+
+    let fibonacciNumbers = [1];
+
+    if (N === 1) {
+        return fibonacciNumbers;
+    }
+
+    fibonacciNumbers.push(1);
+
+    for (let i = 2; i < N; i++) {
+        let nextNumber = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
+        fibonacciNumbers.push(nextNumber);
+    }
+
+    return fibonacciNumbers;
+}
+
+// Replace N with your desired number of Fibonacci numbers
+let N = 5;
+let fibonacciNumbers = generateFibonacciNumbers(N);
+
+// Print the first N Fibonacci numbers
+console.log(fibonacciNumbers.join(" "));
